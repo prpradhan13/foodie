@@ -42,7 +42,7 @@ const foodDetails = () => {
   } = data;
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false} className="flex-1 bg-slate-400">
+    <ScrollView showsVerticalScrollIndicator={false} className="flex-1 bg-white">
       <View className="w-full h-[30vh]">
         {/* Recipe Image */}
         <Image
@@ -90,10 +90,10 @@ const foodDetails = () => {
           {/* Ingredients */}
           {selected === "ingredients" && (
             <View className="mt-4 bg-surface p-3 rounded-xl">
-              {extendedIngredients.map((ingredient, index) => (
-                  <View key={index} className="my-1 bg-[#dcdcdc] p-3 rounded-xl">
+              {extendedIngredients.map((ingredient:any, index:number) => (
+                  <View key={index} className="my-1 rounded-xl">
                     <Text className="text-lg leading-5 text-[#000] font-medium">
-                      {ingredient.original}
+                      {index + 1}. {ingredient.original}
                     </Text>
                   </View>
               ))}
